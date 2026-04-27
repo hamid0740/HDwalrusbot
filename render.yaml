@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: hd-walrus-bot
+    env: python
+    repo: https://github.com/hamid0740/HDwalrusbot
+    branch: main
+    region: frankfurt
+    plan: free
+    numInstances: 1
+    buildCommand: pip install -r requirements.txt
+    startCommand: python main.py
+    envVars:
+      - key: API_ID
+        value: 28820822
+      - key: API_HASH
+        value: 508f6bb80eb3f9902a871e9691dd3947
+      - key: BOT_TOKEN
+        value: 8752651552:AAHdO__hCwRS6P6MYMUlp11tuFRAqc6vJVk
+      - key: RUBIKA_SESSION
+        value: rubsession
+    autoDeploy: false
