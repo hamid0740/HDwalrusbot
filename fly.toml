@@ -1,0 +1,23 @@
+app = "hd-walrus-bot"
+primary_region = "ams"
+
+[build]
+  # پیش‌فرض خودش Dockerfile رو پیدا می‌کنه
+
+[env]
+  API_ID = "28820822"
+  API_HASH = "508f6bb80eb3f9902a871e9691dd3947"
+  BOT_TOKEN = "8752651552:AAHdO__hCwRS6P6MYMUlp11tuFRAqc6vJVk"
+  RUBIKA_SESSION = "rubsession"
+
+[experimental]
+  # برای session file persistence
+  auto_rollback = true
+
+[mounts]
+  # برای ذخیره session file (خیلی مهم!)
+  source = "session_data"
+  destination = "/app/sessions"
+
+[processes]
+  app = "python main.py"
